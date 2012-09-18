@@ -17,15 +17,13 @@ node[:neo4j][:supported_versions].each do |version, install_version|
     end
   end
 
-  cf_remote_file File.join(node[:neo4j][:service_dir], "neo4j-server.tgz") do
+  remote_file File.join(node[:neo4j][:service_dir], "neo4j-server.tgz") do
     owner node[:deployment][:user]
-    id node[:neo4j][:server_id]
-    checksum node[:neo4j][:checksum][:server]
+    source "http://dist.neo4j.org/neo4j-community-#{version}-unix.tar.gz"
   end
 
-  cf_remote_file File.join(node[:neo4j][:service_dir], "neo4j-hosting-extension.jar") do
+  remote_file File.join(node[:neo4j][:service_dir], "neo4j-hosting-extension.jar") do
     owner node[:deployment][:user]
-    id node[:neo4j][:jar_id]
-    checksum node[:neo4j][:checksum][:jar]
+    source "http://cl.ly/3r1g1Y2w2o2s/download/authentication-extension-1.7-1.0-SNAPSHOT.jar"
   end
 end

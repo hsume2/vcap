@@ -12,11 +12,9 @@ jobs:
         builtin_services:
           - mysql
           - redis
-          - mongodb
-          - rabbitmq
-          - postgresql
           - vblob
           - filesystem
+          - neo4j
     - health_manager
     - dea
     - uaa
@@ -25,18 +23,12 @@ jobs:
         index: "0"
     - mysql_node:
         index: "0"
-    - mongodb_node:
-        index: "0"
-    - rabbitmq_node:
-        index: "0"
-    - postgresql_node:
-        index: "0"
     - vblob_node:
+        index: "0"
+    - neo4j_node:
         index: "0"
     - redis_gateway
     - mysql_gateway
-    - mongodb_gateway
-    - rabbitmq_gateway
-    - postgresql_gateway
     - vblob_gateway
     - filesystem_gateway
+    - neo4j_gateway
