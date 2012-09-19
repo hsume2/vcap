@@ -155,7 +155,7 @@ readonly CORE_REPOS=(cloud_controller dea router stager)
 for REPO in vcap "${CORE_REPOS[@]}"; do
   if [ ! -d $CLOUDFOUNDRY_HOME/$REPO ]; then
     if ! (cd $CLOUDFOUNDRY_HOME
-      git clone --no-checkout $VCAP_REPO_BASE/$REPO
+      git clone --depth 1 --no-checkout $VCAP_REPO_BASE/$REPO
       cd $REPO
       git checkout $VCAP_REPO_BRANCH
       git submodule update --recursive --init
