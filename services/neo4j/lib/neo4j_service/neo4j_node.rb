@@ -277,6 +277,7 @@ class VCAP::Services::Neo4j::Node
     port = provisioned_service.port
     password = provisioned_service.password
     username = provisioned_service.username
+    address = @local_ip
 
     @logger.info("Updating Neo4j in #{dir} with port #{port} admin-login #{username}")
     File.open(File.join(dir, "conf","neo4j-server.properties"), "w") {|f| f.write(@config_template.result(binding))}
