@@ -15,7 +15,7 @@ module CloudFoundry
   def cf_local_ip(route = A_ROOT_SERVER)
     route ||= A_ROOT_SERVER
     orig, Socket.do_not_reverse_lookup = Socket.do_not_reverse_lookup, true
-    UDPSocket.open {|s| s.connect(route, 1); s.addr.last }
+    Socket::getaddrinfo(Socket.gethostname, 'echo', Socket::AF_INET).map { |x| x[3] }.last
   ensure
     Socket.do_not_reverse_lookup = orig
   end
