@@ -1,6 +1,3 @@
-[submodule "services"]
-	path = services
-	url = https://github.com/hsume2/vcap-services.git
 [submodule "tests"]
 	path = tests
 	url = https://github.com/cloudfoundry/vcap-tests.git
