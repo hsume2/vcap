@@ -24,6 +24,6 @@ node[:neo4j][:supported_versions].each do |version, install_version|
 
   remote_file File.join(node[:neo4j][:service_dir], "neo4j-hosting-extension.jar") do
     owner node[:deployment][:user]
-    source "http://cl.ly/3r1g1Y2w2o2s/download/authentication-extension-1.7-1.0-SNAPSHOT.jar"
+    source "http://cl.ly/220s0j0W2w0E/download/neo4j-hosting-extension-1.7.2.jar"
   end
 end
