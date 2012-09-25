@@ -12,8 +12,6 @@ jobs:
         builtin_services:
           - mysql
           - redis
-          - vblob
-          - filesystem
           - neo4j
     - health_manager
     - dea
@@ -23,12 +21,8 @@ jobs:
         index: "0"
     - mysql_node:
         index: "0"
-    - vblob_node:
-        index: "0"
     - neo4j_node:
         index: "0"
     - redis_gateway
     - mysql_gateway
-    - vblob_gateway
-    - filesystem_gateway
     - neo4j_gateway
